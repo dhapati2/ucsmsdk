@@ -17,6 +17,7 @@ class FirmwareExcludeServerComponentConsts:
     SERVER_COMPONENT_HOST_HBA_OPTIONROM = "host-hba-optionrom"
     SERVER_COMPONENT_HOST_NIC = "host-nic"
     SERVER_COMPONENT_HOST_NIC_OPTIONROM = "host-nic-optionrom"
+    SERVER_COMPONENT_INTEL_AMC = "intel-amc"
     SERVER_COMPONENT_LOCAL_DISK = "local-disk"
     SERVER_COMPONENT_NVME_MSWITCH = "nvme-mswitch"
     SERVER_COMPONENT_PERSISTENT_MEMORY_DIMM = "persistent-memory-dimm"
@@ -47,7 +48,7 @@ class FirmwareExcludeServerComponent(ManagedObject):
         "prop_acl": MoPropertyMeta("prop_acl", "propAcl", "ulong", VersionMeta.Version311e, MoPropertyMeta.READ_ONLY, None, None, None, None, [], []),
         "rn": MoPropertyMeta("rn", "rn", "string", VersionMeta.Version227b, MoPropertyMeta.READ_ONLY, 0x8, 0, 256, None, [], []),
         "sacl": MoPropertyMeta("sacl", "sacl", "string", VersionMeta.Version311e, MoPropertyMeta.READ_ONLY, None, None, None, r"""((none|del|mod|addchild|cascade),){0,4}(none|del|mod|addchild|cascade){0,1}""", [], []),
-        "server_component": MoPropertyMeta("server_component", "serverComponent", "string", VersionMeta.Version227b, MoPropertyMeta.NAMING, 0x10, None, None, None, ["adaptor", "blade-bios", "blade-controller", "board-controller", "cpld", "flexflash-controller", "graphics-card", "host-hba", "host-hba-optionrom", "host-nic", "host-nic-optionrom", "local-disk", "nvme-mswitch", "persistent-memory-dimm", "plx-switch", "psu", "retimer", "sas-exp-reg-fw", "sas-expander", "storage-controller", "storage-controller-onboard-device", "storage-controller-onboard-device-cpld", "storage-dev-bridge", "ubm", "unspecified"], []),
+        "server_component": MoPropertyMeta("server_component", "serverComponent", "string", VersionMeta.Version227b, MoPropertyMeta.NAMING, 0x10, None, None, None, ["adaptor", "blade-bios", "blade-controller", "board-controller", "cpld", "flexflash-controller", "graphics-card", "host-hba", "host-hba-optionrom", "host-nic", "host-nic-optionrom", "intel-amc", "local-disk", "nvme-mswitch", "persistent-memory-dimm", "plx-switch", "psu", "retimer", "sas-exp-reg-fw", "sas-expander", "storage-controller", "storage-controller-onboard-device", "storage-controller-onboard-device-cpld", "storage-dev-bridge", "ubm", "unspecified"], []),
         "status": MoPropertyMeta("status", "status", "string", VersionMeta.Version227b, MoPropertyMeta.READ_WRITE, 0x20, None, None, r"""((removed|created|modified|deleted),){0,3}(removed|created|modified|deleted){0,1}""", [], []),
     }
 

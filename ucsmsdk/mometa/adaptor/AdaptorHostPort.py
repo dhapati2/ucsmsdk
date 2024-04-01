@@ -6,9 +6,6 @@ from ...ucsmeta import VersionMeta
 
 
 class AdaptorHostPortConsts:
-    HOST_PORT_ID_ANY = "any"
-    HOST_PORT_ID_HOSTPORT1 = "hostport1"
-    HOST_PORT_ID_HOSTPORT2 = "hostport2"
     HOTSWAP_THERMAL_LOWER_CRITICAL = "lower-critical"
     HOTSWAP_THERMAL_LOWER_NON_CRITICAL = "lower-non-critical"
     HOTSWAP_THERMAL_LOWER_NON_RECOVERABLE = "lower-non-recoverable"
@@ -185,7 +182,6 @@ class AdaptorHostPort(ManagedObject):
         "child_action": MoPropertyMeta("child_action", "childAction", "string", VersionMeta.Version223a, MoPropertyMeta.INTERNAL, 0x2, None, None, r"""((deleteAll|ignore|deleteNonPresent),){0,2}(deleteAll|ignore|deleteNonPresent){0,1}""", [], []),
         "dn": MoPropertyMeta("dn", "dn", "string", VersionMeta.Version223a, MoPropertyMeta.READ_ONLY, 0x4, 0, 256, None, [], []),
         "flt_aggr": MoPropertyMeta("flt_aggr", "fltAggr", "ulong", VersionMeta.Version223a, MoPropertyMeta.INTERNAL, None, None, None, None, [], []),
-        "host_port_id": MoPropertyMeta("host_port_id", "hostPortId", "string", VersionMeta.Version421a, MoPropertyMeta.READ_ONLY, None, None, None, None, ["any", "hostport1", "hostport2"], ["0-255"]),
         "hotswap_thermal": MoPropertyMeta("hotswap_thermal", "hotswapThermal", "string", VersionMeta.Version432b, MoPropertyMeta.READ_ONLY, None, None, None, None, ["lower-critical", "lower-non-critical", "lower-non-recoverable", "not-supported", "ok", "unknown", "upper-critical", "upper-non-critical", "upper-non-recoverable"], []),
         "id": MoPropertyMeta("id", "id", "uint", VersionMeta.Version223a, MoPropertyMeta.NAMING, 0x8, None, None, None, [], ["1-5000"]),
         "inlet2_thermal": MoPropertyMeta("inlet2_thermal", "inlet2Thermal", "string", VersionMeta.Version423b, MoPropertyMeta.READ_ONLY, None, None, None, None, ["lower-critical", "lower-non-critical", "lower-non-recoverable", "not-supported", "ok", "unknown", "upper-critical", "upper-non-critical", "upper-non-recoverable"], []),
@@ -212,7 +208,6 @@ class AdaptorHostPort(ManagedObject):
         "childAction": "child_action", 
         "dn": "dn", 
         "fltAggr": "flt_aggr", 
-        "hostPortId": "host_port_id", 
         "hotswapThermal": "hotswap_thermal", 
         "id": "id", 
         "inlet2Thermal": "inlet2_thermal", 
@@ -240,7 +235,6 @@ class AdaptorHostPort(ManagedObject):
         self.id = id
         self.child_action = None
         self.flt_aggr = None
-        self.host_port_id = None
         self.hotswap_thermal = None
         self.inlet2_thermal = None
         self.location_dn = None
