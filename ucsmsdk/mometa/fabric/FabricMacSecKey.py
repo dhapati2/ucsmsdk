@@ -8,6 +8,7 @@ from ...ucsmeta import VersionMeta
 class FabricMacSecKeyConsts:
     CRYPTOGRAPHIC_ALGORITHM_AES_128_CMAC = "AES-128-CMAC"
     CRYPTOGRAPHIC_ALGORITHM_AES_256_CMAC = "AES-256-CMAC"
+    ENCRYPT_TYPE_TYPE_6 = "type-6"
     ENCRYPT_TYPE_TYPE_7 = "type-7"
     ENCRYPT_TYPE_UNENCRYPTED = "unencrypted"
     IS_KEY_HEX_STR_UPDATED_FALSE = "false"
@@ -28,9 +29,9 @@ class FabricMacSecKey(ManagedObject):
         "child_action": MoPropertyMeta("child_action", "childAction", "string", VersionMeta.Version434a, MoPropertyMeta.INTERNAL, 0x2, None, None, r"""((deleteAll|ignore|deleteNonPresent),){0,2}(deleteAll|ignore|deleteNonPresent){0,1}""", [], []),
         "cryptographic_algorithm": MoPropertyMeta("cryptographic_algorithm", "cryptographicAlgorithm", "string", VersionMeta.Version434a, MoPropertyMeta.READ_WRITE, 0x4, None, None, None, ["AES-128-CMAC", "AES-256-CMAC"], []),
         "dn": MoPropertyMeta("dn", "dn", "string", VersionMeta.Version434a, MoPropertyMeta.READ_ONLY, 0x8, 0, 256, None, [], []),
-        "encrypt_type": MoPropertyMeta("encrypt_type", "encryptType", "string", VersionMeta.Version434a, MoPropertyMeta.READ_WRITE, 0x10, None, None, None, ["type-7", "unencrypted"], []),
+        "encrypt_type": MoPropertyMeta("encrypt_type", "encryptType", "string", VersionMeta.Version434a, MoPropertyMeta.READ_WRITE, 0x10, None, None, None, ["type-6", "type-7", "unencrypted"], []),
         "is_key_hex_str_updated": MoPropertyMeta("is_key_hex_str_updated", "isKeyHexStrUpdated", "string", VersionMeta.Version434a, MoPropertyMeta.READ_ONLY, None, None, None, None, ["false", "no", "true", "yes"], []),
-        "key_hex_string": MoPropertyMeta("key_hex_string", "keyHexString", "string", VersionMeta.Version434a, MoPropertyMeta.READ_WRITE, 0x20, None, None, r"""[\-\.:_a-zA-Z0-9]{32,144}""", [], []),
+        "key_hex_string": MoPropertyMeta("key_hex_string", "keyHexString", "string", VersionMeta.Version434a, MoPropertyMeta.READ_WRITE, 0x20, None, None, r"""[!""#$%&'\(\)\*\+,\-\./:;<=>\?@\[\\\]\^_`\{\|\}~a-zA-Z0-9]{32,144}""", [], []),
         "key_id": MoPropertyMeta("key_id", "keyId", "string", VersionMeta.Version434a, MoPropertyMeta.NAMING, 0x40, None, None, r"""[\-\.:_a-zA-Z0-9]{2,64}""", [], []),
         "rn": MoPropertyMeta("rn", "rn", "string", VersionMeta.Version434a, MoPropertyMeta.READ_ONLY, 0x80, 0, 256, None, [], []),
         "sacl": MoPropertyMeta("sacl", "sacl", "string", VersionMeta.Version434a, MoPropertyMeta.READ_ONLY, None, None, None, r"""((none|del|mod|addchild|cascade),){0,4}(none|del|mod|addchild|cascade){0,1}""", [], []),
